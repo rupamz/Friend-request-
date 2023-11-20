@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend request</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .container {
+            height: 375px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            box-shadow: rgba(45, 42, 42, 0.2) 0px 6px 20px;
+            justify-content: start;
+            align-items: center;
+            
+        }
+
+        img {
+            width: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 13px;
+
+            text-align: center;
+        }
+
+        .btn {
+            margin-top: 10px;
+            display: flex;
+            cursor: pointer;
+            gap: 10px;
+        }
+        button {
+            padding: 5px 7px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn2{
+            background-color: blue;
+            color: aliceblue;
+
+        }
+        .buttonAfter{
+            padding: 5px 7px;
+            border: none;
+            border-radius: 5px;
+            cursor: none;
+            display: none;
+        }
+        .cancelFriend{padding: 5px 7px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            margin-top: 10px;
+        }
+        h3{
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://img.mensxp.com/media/content/2020/Aug/AMP_imghappy-girl-taking-a-selfie_5f4a2e4438bf3.jpeg"
+            alt="Photo of Jaseka">
+        <div class="name">
+            <h3>Jaseka Mazumder</h3>
+            <p>She is not your Friend</p>
+        </div>
+        <div class="btn">
+            <button class="btn-1">
+                Remove
+            </button>
+            <button class="btn2">Add Friend</button>
+        </div>
+        <div class="buttonAfter">🤝You are now her Friend</div>
+        <button class="cancelFriend">Cancel Friend</button>
+    </div>
+    <script>
+        let container = document.querySelector(".container")
+let paragraph = document.querySelector("p")
+let removeFr = document.querySelector(".btn-1")
+let addFr = document.querySelector(".btn2")
+let button1 = document.querySelector(".btn")
+let button2 = document.querySelector(".buttonAfter")
+let button3 = document.querySelector(".cancelFriend")
+
+removeFr.addEventListener("click",function (){
+    container.style.display = "none"
+})
+addFr.addEventListener("click", function(){
+    paragraph.innerHTML = "Now She is your friend."
+    button1.style.display = "none"
+    button2.style.display = "block" 
+    button3.style.display = "block"
+
+
+})
+button3.addEventListener("click", function () {
+    paragraph.innerHTML = "You have cancelled the request to be friends with this person."
+    button1.style.display = "block"
+    button2.style.display = "none"
+    button3.style.display = "none"
+})
+    </script>
+</body>
+
+</html>
